@@ -6,9 +6,17 @@
     <title>Copy Text Button</title>
 </head>
 <body>
-    <h2>Click the button to open the copy tool:</h2>
-    <button onclick="window.open('https://pldumaine.github.io/copy/', '_blank')">
-        Open Copy Tool
-    </button>
+    <h2>Click the text below, then press Ctrl+C to copy:</h2>
+    <p id="textToCopy" onclick="selectText()">This is the text to copy.</p>
+
+    <script>
+        function selectText() {
+            var text = document.getElementById("textToCopy");
+            var range = document.createRange();
+            range.selectNode(text);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+        }
+    </script>
 </body>
 </html>
