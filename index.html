@@ -6,18 +6,20 @@
     <title>Copy Text Button</title>
 </head>
 <body>
-    <button onclick="copyText()">Copy Text</button>
+    <button id="copyBtn">Copy Text</button>
     <p id="textToCopy">This is the text to copy.</p>
 
     <script>
-        function copyText() {
-            var text = document.getElementById("textToCopy").innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                alert("Text copied!");
-            }).catch(err => {
-                console.error('Copy error: ', err);
-            });
-        }
+        document.getElementById("copyBtn").addEventListener("click", async function() {
+            try {
+                const text = document.getElementById("textToCopy").innerText;
+                await navigator.clipboard.writeText(text);
+                alert("Text copied successfully!");
+            } catch (err) {
+                alert("Copy not allowed in this context. Try opening in a new tab.");
+                console.error("Copy error:", err);
+            }
+        });
     </script>
 </body>
 </html>
