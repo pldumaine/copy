@@ -6,20 +6,9 @@
     <title>Copy Text Button</title>
 </head>
 <body>
-    <button id="copyBtn">Copy Text</button>
-    <p id="textToCopy">This is the text to copy.</p>
-
-    <script>
-        document.getElementById("copyBtn").addEventListener("click", async function() {
-            try {
-                const text = document.getElementById("textToCopy").innerText;
-                await navigator.clipboard.writeText(text);
-                alert("Text copied successfully!");
-            } catch (err) {
-                alert("Copy not allowed in this context. Try opening in a new tab.");
-                console.error("Copy error:", err);
-            }
-        });
-    </script>
+    <h2>Click the button to open the copy tool:</h2>
+    <button onclick="window.open('https://pldumaine.github.io/copy/', '_blank')">
+        Open Copy Tool
+    </button>
 </body>
 </html>
