@@ -1,0 +1,11 @@
+import pyperclip
+
+# Le texte à copier dans le presse-papier
+texte = "bra5uPra"
+
+# Copier le texte dans le presse-papier
+pyperclip.copy(texte)
+
+# Vérifier que le texte a bien été copié
+copie = pyperclip.paste()
+print(f"Le texte '{copie}' a été copié dans le presse-papier.")
